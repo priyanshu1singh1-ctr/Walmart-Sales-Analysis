@@ -147,6 +147,7 @@ SELECT
 FROM sales;
 
 
+
 -- In which city is each branch?
 SELECT 
 
@@ -155,6 +156,7 @@ SELECT
 	branch
 
 FROM sales;
+
 
 
 
@@ -176,6 +178,7 @@ FROM sales;
 
 
 
+
 -- What is the most selling product line
 
 SELECT
@@ -189,6 +192,7 @@ FROM sales
 GROUP BY product_line
 
 ORDER BY total_quantity DESC;
+
 
 
 -- What is the total revenue by month
@@ -207,6 +211,7 @@ ORDER BY total_revenue;
 
 
 
+
 -- What month had the largest COGS?
 
 SELECT
@@ -220,6 +225,7 @@ FROM sales
 GROUP BY month_name 
 
 ORDER BY cogs DESC;
+
 
 
 -- What product line had the largest revenue?
@@ -237,6 +243,7 @@ GROUP BY product_line
 ORDER BY total_revenue DESC;
 
 
+
 -- What is the city with the largest revenue?
 
 SELECT
@@ -252,6 +259,7 @@ FROM sales
 GROUP BY city, branch 
 
 ORDER BY total_revenue;
+
 
 
 -- What product line had the largest TAX %?
@@ -298,6 +306,7 @@ FROM sales
 GROUP BY product_line;
 
 
+
 -- Which branch sold more products than average product sold?
 
 SELECT 
@@ -311,6 +320,7 @@ FROM sales
 GROUP BY branch
 
 HAVING SUM(quantity) > (SELECT AVG(quantity) FROM sales);
+
 
 
 -- What is the most common product line by gender
@@ -328,6 +338,7 @@ FROM sales
 GROUP BY gender, product_line
 
 ORDER BY PRODUCT_LINE;
+
 
 
 -- What is the average rating of each product line
@@ -353,6 +364,7 @@ ORDER BY avg_rating DESC;
 -- -------------------------- Customers -------------------------------
 -- --------------------------------------------------------------------
 
+
 -- How many unique customer types does the data have?
 
 SELECT
@@ -362,6 +374,7 @@ SELECT
 FROM sales;
 
 
+
 -- How many unique payment methods does the data have?
 
 SELECT
@@ -369,6 +382,7 @@ SELECT
 	DISTINCT payment
 
 FROM sales;
+
 
 
 -- What is the most common customer type?
@@ -386,6 +400,7 @@ GROUP BY customer_type
 ORDER BY count DESC;
 
 
+
 -- Which customer type buys the most?
 
 SELECT
@@ -397,6 +412,7 @@ SELECT
 FROM sales
 
 GROUP BY customer_type;
+
 
 
 -- What is the gender of most of the customers?
@@ -412,6 +428,7 @@ FROM sales
 GROUP BY gender
 
 ORDER BY gender_count DESC;
+
 
 
 
@@ -436,6 +453,7 @@ ORDER BY branch ASC,gender DESC;
 -- an effect of the sales per branch and other factors.
 
 
+
 -- Which time of the day do customers give most ratings?
 
 SELECT
@@ -453,6 +471,7 @@ ORDER BY avg_rating_by_time DESC;
 
 -- Looks like time of the day does not really affect the rating, its
 -- more or less the same rating each time of the day
+
 
 
 
@@ -478,6 +497,7 @@ ORDER BY branch,avg_rating;
 
 
 
+
 -- Which day fo the week has the best avg ratings?
 
 SELECT
@@ -495,6 +515,7 @@ ORDER BY avg_rating DESC;
 
 -- Mon, Tue and Friday are the top best days for good ratings
 -- why is that the case, how many sales are made on these days?
+
 
 
 
@@ -524,6 +545,7 @@ ORDER BY branch,day_name;
 
 
 
+
 -- Number of sales made in each time of the day per weekday 
 
 SELECT
@@ -545,6 +567,7 @@ ORDER BY total_sales DESC;
 -- filled during the evening hours
 
 
+
 -- Which of the customer types brings the most revenue?
 
 SELECT
@@ -561,6 +584,7 @@ ORDER BY total_revenue;
 
 
 
+
 -- Which city has the largest tax percent?
 
 SELECT
@@ -574,6 +598,7 @@ FROM sales
 GROUP BY city 
 
 ORDER BY avg_tax_pct DESC;
+
 
 
 -- Which customer type pays the most in VAT?
